@@ -19,6 +19,8 @@ php artisan serve
 
 Instalacion global de Laravel
 
+_este comando de utiliza una sola vez_
+
 ```bash
 composer global require laravel/installer
 ```
