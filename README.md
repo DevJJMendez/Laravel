@@ -35,3 +35,17 @@ permiten el desarrollo rápido de aplicaciones web modernas y robustas.
 
 - **Seguridad**: Tiene integradas diversas capas de seguridad, como protección
   CSRF, filtrado de entradas, encriptación y más.
+
+---
+
+**Herramientas Adicionales:**
+
+- **Laravel Mix**: Facilita la compilación de activos, como CSS y JavaScript,
+  utilizando Laravel Mix, que se basa en Webpack.
+
+- **Laravel Valet**: Herramienta para desarrollo local que permite configurar
+  fácilmente entornos de desarrollo local basados en Laravel.
+
+- **Laravel Forge**: Es una herramienta de implementación y gestión de
+  servidores web que simplifica la implementación de aplicaciones Laravel en
+  servidores.
