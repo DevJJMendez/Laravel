@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
     {{-- Form --}}
-<form method="POST" action="{{ route('note-store') }}" >
+<form method="POST" action="{{ route('note-update', ['note' => $note->id]) }}" >
+    @method('PUT')
     @csrf
     <div class="container mt-5 mb-5 d-flex justify-content-center">
         <div class="card px-1 py-4">

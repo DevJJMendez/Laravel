@@ -34,8 +34,13 @@
 <ul class="list-group">
     @forelse ($notes as $note)
     <a href="#">
-      <li class="list-group-item">{{ $note->title }}</li>
-      <a href="{{ route('note-update',['note' =>$note->id]) }}">Edit</a> <a href="#">Delete</a>
+      <li class="list-group-item">Title: {{ $note->title }} <br> Description: {{ $note->description }} </li>
+      <a href="{{ route('note-edit', ['note' => $note->id]) }}">Edit</a>
+      <form action="{{ route('note-delete', ['note' => $note->id]) }}" method="post">
+        @csrf
+        @method('DELETE')
+        <input type="submit" value="Delete">
+      </form>
     </a>
     {{-- <li class="list-group-item">A second item</li>
     <li class="list-group-item">A third item</li>

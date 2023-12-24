@@ -8,4 +8,6 @@ Route::get('/note/create', [NoteController::class, 'create'])->name('note-create
 
 // CRUD
 Route::post('/note/store', [NoteController::class, 'store'])->name('note-store');
-Route::get('/note/update/{note}', [NoteController::class, 'update'])->name('note-update');
+Route::get('/note/edit/{note}', [NoteController::class, 'edit'])->name('note-edit');
+Route::put('/note/update/{note}', [NoteController::class, 'update'])->name('note-update');
+Route::delete('/note/delete/{note}', [NoteController::class, 'delete'])->name('note-delete');
