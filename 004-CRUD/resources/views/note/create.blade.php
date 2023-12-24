@@ -11,7 +11,10 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <input class="form-control" type="text" name="title" placeholder="Title"> 
+                            <input class="form-control" type="text" name="title" placeholder="Title">
+                            @error('title')
+                            <div class="alert alert-danger">{{$message}}</div>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -21,6 +24,9 @@
                         <div class="form-group">
                             <div class="input-group"> 
                                 <input class="form-control" type="text" name="description" placeholder="Description">
+                                @error('description')
+                                <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
                             </div>
                         </div>
                     </div>
