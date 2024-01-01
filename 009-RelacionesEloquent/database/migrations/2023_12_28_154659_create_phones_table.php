@@ -12,13 +12,11 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->unsignedTinyInteger('id', true);
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+        Schema::create('phones', function (Blueprint $table) {
+            $table->unsignedSmallInteger('id', true);
+            $table->char('prefix', 3);
+            $table->char('phone_number', 10);
+            $table->unsignedTinyInteger('user_id');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('phones');
     }
 };
