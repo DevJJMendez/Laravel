@@ -28,6 +28,8 @@ composer require laravel/breeze --dev
 # --dev se utiliza para especificar que solo se instalara en el entorno de desarrollo
 ```
 
+---
+
 - Configuracion:
 
 ```bash
@@ -40,6 +42,16 @@ php artisan breeze:install react
 php artisan breeze:install vue
 # Trabajara con vue
 ```
+
+---
+
+- Migracion a la base de datos:
+
+```bash
+php artisan migrate
+```
+
+---
 
 - Instalacion de dependencias: si es necesario, instala las dependencias de Node.Js y compila los assets:
 

@@ -28,6 +28,8 @@ Para comenzar a utilizar Jetstream en tu proyecto Laravel, sigue estos pasos:
 composer require laravel/jetstream
 ```
 
+---
+
 - Selecciona el stack frontend:
 
 ```bash
@@ -36,4 +38,21 @@ php artisan jetstream:install inertia
 
 # Inertia.js - React
 php artisan jetstream:install inertia --react
+```
+
+---
+
+- Migracion a la base de datos:
+
+```bash
+php artisan migrate
+```
+
+---
+
+- Instalacion de dependencias: si es necesario, instala las dependencias de Node.Js y compila los assets:
+
+```bash
+npm install
+npm run dev
 ```
