@@ -40,3 +40,9 @@ php artisan breeze:install react
 php artisan breeze:install vue
 # Trabajara con vue
 ```
+
+- Instalacion de dependencias: si es necesario, instala las dependencias de Node.Js y compila los assets:
+
+```bash
+npm install && npm run dev
+```
