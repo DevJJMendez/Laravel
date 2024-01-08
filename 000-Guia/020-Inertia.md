@@ -43,3 +43,13 @@ Inertia es una librería que permite construir aplicaciones web modernas utiliza
 ## Uso de Inertia con Laravel:
 
 Inertia se integra bien con Laravel utilizando el paquete Jetstream o instalándolo directamente. Con Jetstream, puedes utilizar la opción Inertia.js durante la instalación para tener una estructura de autenticación completa que utiliza Inertia para el frontend.
+
+```bash
+composer require laravel/jetstream
+```
+
+luego
+
+```bash
+php artisan jetstream:install inertia
+```
