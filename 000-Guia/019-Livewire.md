@@ -35,3 +35,116 @@ php artisan make:livewire NombreDelComponente
 ```php
 <livewire:nombre-del-componente />
 ```
+
+Para hacer un correcto uso de livewire debemos agregar los estilos y los scripts de este mismo, por lo tanto, un buena solucion es crear un layout.
+
+```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@yield('title')</title>
+    @livewireStyles
+</head>
+<body>
+    @yield('content')
+    @livewireScripts
+</body>
+</html>
+```
+
+Uso en la vista `views/layouts/app.blade.php`:
+
+```php
+@extends('layouts.app')
+@section('title','example')
+@section('content')
+    <h1>Livewire</h1>
+@endsection
+```
+
+---
+
+ejemplo:
+
+- creamos un nuevo componente, en este caso sera un contador:
+
+```bash
+php artisan make:livewire counter
+```
+
+Esto creara dos directorios:
+
+![](/med-ia/livewireView.png)
+
+```php
+<div>
+    {{-- If your happiness depends on money, you will never be happy with yourself. --}}
+    <h1> {{ $count }}</h1>
+    <button wire:click='increment'>Increment</button>
+</div>
+```
+
+---
+
+![](/med-ia/livewireLogic.png)
+
+```php
+namespace App\Http\Livewire;
+
+use Livewire\Component;
+
+class Counter extends Component
+{
+    public function render()
+    {
+        return view('livewire.counter');
+    }
+}
+<?php
+```
+
+---
+
+La sintaxis adecuada para agregar componentes livewire seria esta:
+
+```php
+// welcome.blade.php
+
+@extends('layouts.app')
+@section('title','example')
+@section('content')
+    <livewire:counter/>
+@endsection
+```
+
+Entonces podremos realizar operaciones en las vistas sin necesidad de recargar la pagina ejemplo:
+
+tenemos un boton en la vista que al pulsarlo aumentara en 1 en valor de la variable:
+
+```php
+<div>
+    <h1> {{ $count }}</h1>
+    <button wire:click='increment'>Increment</button>
+</div>
+```
+
+En la logica tendremos la funcion que realiza dicha operacion:
+
+```php
+class Counter extends Component
+{
+    public $count = 0;
+    public function increment()
+    {
+        $this->count++;
+        ;
+    }
+    public function render()
+    {
+        return view('livewire.counter');
+    }
+}
+```
